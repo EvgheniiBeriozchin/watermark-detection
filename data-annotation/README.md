@@ -33,7 +33,7 @@ export LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=absolute-path-to-project-folder
 
 Note here that the data (the images) need to be stored in a subfolder of `absolute-path-to-project-folder` so make sure that this path does not point to this Github repository as we don't want the data to land here.  
 
-Note: the 2 lines above need to be run every time, before running the app.
+Note: the 2 lines above need to be run every time, before running the app. I'll try to fix this later.
 
 Now, run the program:
 ```
@@ -53,8 +53,8 @@ Go to the Settings Tab on the top right corner. Then select `Cloud Storage`.
   export LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/mnt/d/watermark-project
   ```
 
-  Then in `Absolute local path`, you can have something like: `/mnt/d/watermark-project/data`.
-  Note2: It does not matter if the data folder has subfolders, even the ones that have meaning (like 'WZ-II...'). You can still select the generic data folder, as the subfolders will be preserved in the output annotation.
+  Then in `Absolute local path`, you can have something like: `/mnt/d/watermark-project/data`.  
+  Note2: It does not matter if the data folder has subfolders, even the ones that have meaning (like 'WZ-II...'). You can still select the generic data folder, as the subfolders will be preserved in the each output annotation file.
 
   To check that your path is valid, press `Check connection` at the bottom of the screen.
 
@@ -76,7 +76,7 @@ Note: The data which each annotator has to annotate is written in the correspond
 
 ## Labeling
 The labeling is mostly straightforward:
- - Select one of the 2 tags available (Drawing vs Watermark), now you can draw a bounding box around the corresponding instance. Make sure it's as tight as possible without losing any relevant strokes. You can modify your selecting by pressing and dragging, or double-pressing and resizing.
+ - Select one of the 2 tags available (Drawing vs Watermark), now you can draw a bounding box around the corresponding instance. Make sure it's as tight as possible without losing any relevant strokes. You can modify your selection by clicking on the box and dragging, or double-clicking and resizing.
  - To make multiple annotations on the same image, press the Label again.
  - Then proceed to mark whatever Checkboxes apply and press Submit.
  - As soon as you are done with a labeling session, Sync the storage and push the outputs to Github.
