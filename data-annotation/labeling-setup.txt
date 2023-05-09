@@ -9,6 +9,7 @@
     <Choice alias="TOW" value="Text On Watermark"/>
     <Choice alias="IW" value="Incomplete/Truncated Watermark"/>
     <Choice alias="MII" value="Multiple Instances in Image"/>
+    <Choice alias="NII" value="No Instances in Image"/>
     <Choice alias="SLBB" value="Scaling Lines in Bounding Box(es)"/>
     <Choice alias="RBB" value="Ruler in Bounding Box(es)"/>
     <Choice alias="OABB" value="Other Annotations in Bounding Box(es)"/>
