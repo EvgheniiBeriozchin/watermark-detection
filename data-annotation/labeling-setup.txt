@@ -1,0 +1,16 @@
+<View>
+  <Image name="image" value="$image" zoom="true" zoomControl="true"/>
+  <RectangleLabels name="label" toName="image">
+    <Label value="Drawing" background="green"/>
+    <Label value="Watermark" background="blue"/>
+  </RectangleLabels>
+  <Choices name="otherOptions" toName="image" choice="multiple">
+    <Choice alias="TII" value="Text In Image"/>
+    <Choice alias="TOW" value="Text On Watermark"/>
+    <Choice alias="IW" value="Incomplete/Truncated Watermark"/>
+    <Choice alias="MII" value="Multiple Instances in Image"/>
+    <Choice alias="SLBB" value="Scaling Lines in Bounding Box(es)"/>
+    <Choice alias="RBB" value="Ruler in Bounding Box(es)"/>
+    <Choice alias="OABB" value="Other Annotations in Bounding Box(es)"/>
+  </Choices>
+</View>
