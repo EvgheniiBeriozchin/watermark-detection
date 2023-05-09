@@ -81,5 +81,5 @@ The labeling is mostly straightforward:
  - Then proceed to mark whatever Checkboxes apply and press Submit.
  - As soon as you are done with a labeling session, Sync the storage and push the outputs to Github.
 
-
+Note: Before deleting annotated batches of images, make sure the annotations are pushed to Git and/or save backup files by pressing Export in Label Studio. As the normal annotation files are saved as JSON, save these backup exports as JSON as well.
 
