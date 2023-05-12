@@ -1,0 +1,45 @@
+{
+  "id": 145,
+  "created_username": " test@gmail.com, 1",
+  "created_ago": "19\u00a0minutes",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "test@gmail.com"
+  },
+  "task": {
+    "id": 318,
+    "data": {
+      "image": "/data/local-files/?d=dnb/WZ_II_Thueringen/WZ-II-380/0027823_2.jpg"
+    },
+    "meta": {},
+    "created_at": "2023-05-09T15:05:33.851165Z",
+    "updated_at": "2023-05-12T10:06:46.640526Z",
+    "is_labeled": false,
+    "overlap": 1,
+    "inner_id": 140,
+    "total_annotations": 0,
+    "cancelled_annotations": 1,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": 1,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [],
+  "was_cancelled": true,
+  "ground_truth": false,
+  "created_at": "2023-05-12T10:06:46.588991Z",
+  "updated_at": "2023-05-12T10:06:46.589015Z",
+  "lead_time": 13.218,
+  "last_action": null,
+  "project": 1,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}

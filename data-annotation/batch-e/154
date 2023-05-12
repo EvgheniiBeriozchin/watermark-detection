@@ -1,0 +1,78 @@
+{
+  "id": 154,
+  "created_username": " test@gmail.com, 1",
+  "created_ago": "7\u00a0minutes",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "test@gmail.com"
+  },
+  "task": {
+    "id": 332,
+    "data": {
+      "image": "/data/local-files/?d=dnb/WZ_II_Thueringen/WZ-II-380/0027835_1.jpg"
+    },
+    "meta": {},
+    "created_at": "2023-05-09T15:05:34.098574Z",
+    "updated_at": "2023-05-12T10:19:27.031862Z",
+    "is_labeled": true,
+    "overlap": 1,
+    "inner_id": 154,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": 1,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 40.18624962127867,
+        "y": 21.081646139738698,
+        "width": 16.512036404401094,
+        "height": 40.413976524772416,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Watermark"
+        ]
+      },
+      "id": "E5hR21JQbU",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "value": {
+        "choices": [
+          "TOW"
+        ]
+      },
+      "id": "dx4eVMl2wa",
+      "from_name": "otherOptions",
+      "to_name": "image",
+      "type": "choices",
+      "origin": "manual"
+    }
+  ],
+  "was_cancelled": false,
+  "ground_truth": false,
+  "created_at": "2023-05-12T10:19:26.964939Z",
+  "updated_at": "2023-05-12T10:19:26.964962Z",
+  "lead_time": 78.505,
+  "last_action": null,
+  "project": 1,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}

@@ -1,0 +1,86 @@
+{
+  "id": 71,
+  "created_username": " test@gmail.com, 1",
+  "created_ago": "13\u00a0hours, 33\u00a0minutes",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "test@gmail.com"
+  },
+  "task": {
+    "id": 239,
+    "data": {
+      "image": "/data/local-files/?d=dnb/WZ_II_Thueringen/WZ-II-380/0027751_1.jpg"
+    },
+    "meta": {},
+    "created_at": "2023-05-09T15:05:32.445058Z",
+    "updated_at": "2023-05-11T20:53:29.203766Z",
+    "is_labeled": true,
+    "overlap": 1,
+    "inner_id": 61,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": 1,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 27.777870863818354,
+        "y": 38.05834485955199,
+        "width": 15.983871724079846,
+        "height": 7.081262985669002,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Drawing"
+        ]
+      },
+      "id": "W3RL-TGTni",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 52.745378520410235,
+        "y": 30.58800149005494,
+        "width": 16.97557179455188,
+        "height": 30.737350322409362,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Drawing"
+        ]
+      },
+      "id": "mn9bygAqyO",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    }
+  ],
+  "was_cancelled": false,
+  "ground_truth": false,
+  "created_at": "2023-05-11T20:53:29.147441Z",
+  "updated_at": "2023-05-11T20:53:29.147501Z",
+  "lead_time": 7.509,
+  "last_action": null,
+  "project": 1,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}

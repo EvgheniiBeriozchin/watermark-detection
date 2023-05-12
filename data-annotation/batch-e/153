@@ -1,0 +1,100 @@
+{
+  "id": 153,
+  "created_username": " test@gmail.com, 1",
+  "created_ago": "8\u00a0minutes",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "test@gmail.com"
+  },
+  "task": {
+    "id": 331,
+    "data": {
+      "image": "/data/local-files/?d=dnb/WZ_II_Thueringen/WZ-II-380/0027834_1.jpg"
+    },
+    "meta": {},
+    "created_at": "2023-05-09T15:05:34.082003Z",
+    "updated_at": "2023-05-12T10:18:02.445696Z",
+    "is_labeled": true,
+    "overlap": 1,
+    "inner_id": 153,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": 1,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 46.25741823546023,
+        "y": 77.50897727990244,
+        "width": 31.0209869968035,
+        "height": 10.59224171899053,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Drawing"
+        ]
+      },
+      "id": "u3GJtUHkca",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 42.16758661647851,
+        "y": 4.5803192077832815,
+        "width": 16.20499320728535,
+        "height": 39.63971903654606,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Drawing"
+        ]
+      },
+      "id": "SqVk4FIcyf",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "value": {
+        "choices": [
+          "MII",
+          "SLBB",
+          "RBB"
+        ]
+      },
+      "id": "mfvEgNQKHC",
+      "from_name": "otherOptions",
+      "to_name": "image",
+      "type": "choices",
+      "origin": "manual"
+    }
+  ],
+  "was_cancelled": false,
+  "ground_truth": false,
+  "created_at": "2023-05-12T10:18:02.390180Z",
+  "updated_at": "2023-05-12T10:18:02.390204Z",
+  "lead_time": 151.367,
+  "last_action": null,
+  "project": 1,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}

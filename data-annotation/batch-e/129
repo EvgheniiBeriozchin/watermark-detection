@@ -1,0 +1,78 @@
+{
+  "id": 129,
+  "created_username": " test@gmail.com, 1",
+  "created_ago": "11\u00a0hours, 30\u00a0minutes",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "test@gmail.com"
+  },
+  "task": {
+    "id": 297,
+    "data": {
+      "image": "/data/local-files/?d=dnb/WZ_II_Thueringen/WZ-II-380/0027804_1.jpg"
+    },
+    "meta": {},
+    "created_at": "2023-05-09T15:05:33.464569Z",
+    "updated_at": "2023-05-11T22:56:13.091624Z",
+    "is_labeled": true,
+    "overlap": 1,
+    "inner_id": 119,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": 1,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 46.3650606796436,
+        "y": 38.80407310247093,
+        "width": 15.296032377017058,
+        "height": 9.938942937754218,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Drawing"
+        ]
+      },
+      "id": "894xqZzZwV",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "value": {
+        "choices": [
+          "SLBB"
+        ]
+      },
+      "id": "OTwV1FGqsI",
+      "from_name": "otherOptions",
+      "to_name": "image",
+      "type": "choices",
+      "origin": "manual"
+    }
+  ],
+  "was_cancelled": false,
+  "ground_truth": false,
+  "created_at": "2023-05-11T22:56:13.038429Z",
+  "updated_at": "2023-05-11T22:56:13.038527Z",
+  "lead_time": 28.73,
+  "last_action": null,
+  "project": 1,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}
