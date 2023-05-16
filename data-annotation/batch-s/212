@@ -1,0 +1,101 @@
+{
+  "id": 212,
+  "created_username": " sebastian.pfaff@gmx.at, 1",
+  "created_ago": "5\u00a0days, 20\u00a0hours",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "sebastian.pfaff@gmx.at"
+  },
+  "task": {
+    "id": 464,
+    "data": {
+      "image": "/data/local-files/?d=Data/WZ-II-381/0028082_2.jpg"
+    },
+    "meta": {},
+    "created_at": "2023-05-09T12:32:09.435591Z",
+    "updated_at": "2023-05-09T16:19:32.067143Z",
+    "is_labeled": true,
+    "overlap": 1,
+    "inner_id": 88,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 2,
+    "updated_by": 1,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [
+    {
+      "value": {
+        "choices": [
+          "TII",
+          "TOW",
+          "IW",
+          "MII"
+        ]
+      },
+      "id": "8FaSpcbphh",
+      "from_name": "otherOptions",
+      "to_name": "image",
+      "type": "choices",
+      "origin": "manual"
+    },
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 49.07210466213428,
+        "y": 30.597727788352053,
+        "width": 22.01351698109028,
+        "height": 34.028600494274855,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Watermark"
+        ]
+      },
+      "id": "qUQJE06dA7",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 4.415501952602375,
+        "y": 48.76337166123563,
+        "width": 22.653444800307913,
+        "height": 6.908061754476751,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Watermark"
+        ]
+      },
+      "id": "bJPdeNV4yT",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    }
+  ],
+  "was_cancelled": false,
+  "ground_truth": false,
+  "created_at": "2023-05-09T16:19:32.027355Z",
+  "updated_at": "2023-05-09T16:19:32.027399Z",
+  "lead_time": 33.15,
+  "last_action": null,
+  "project": 2,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}

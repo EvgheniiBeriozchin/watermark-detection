@@ -1,0 +1,99 @@
+{
+  "id": 834,
+  "created_username": " sebastian.pfaff@gmx.at, 1",
+  "created_ago": "0\u00a0minutes",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "sebastian.pfaff@gmx.at"
+  },
+  "task": {
+    "id": 1188,
+    "data": {
+      "image": "/data/local-files/?d=Data/WZ-II-397_0005000-0005326/0005144_1-01.png"
+    },
+    "meta": {},
+    "created_at": "2023-05-15T13:18:52.429221Z",
+    "updated_at": "2023-05-15T13:18:52.429233Z",
+    "is_labeled": true,
+    "overlap": 1,
+    "inner_id": 812,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 2,
+    "updated_by": null,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [
+    {
+      "original_width": 792,
+      "original_height": 1098,
+      "image_rotation": 0,
+      "value": {
+        "x": 26.50602409638555,
+        "y": 78.41191066997519,
+        "width": 49.053356282271935,
+        "height": 12.28287841191067,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Drawing"
+        ]
+      },
+      "id": "bxQCp7UJ5U",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "original_width": 792,
+      "original_height": 1098,
+      "image_rotation": 0,
+      "value": {
+        "x": 15.318416523235804,
+        "y": 11.662531017369727,
+        "width": 64.02753872633387,
+        "height": 67.36972704714638,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Drawing"
+        ]
+      },
+      "id": "5_aAi7jme2",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "value": {
+        "choices": [
+          "MII",
+          "SLBB"
+        ]
+      },
+      "id": "VOBPerIcaX",
+      "from_name": "otherOptions",
+      "to_name": "image",
+      "type": "choices",
+      "origin": "manual"
+    }
+  ],
+  "was_cancelled": false,
+  "ground_truth": false,
+  "created_at": "2023-05-15T14:33:51.893045Z",
+  "updated_at": "2023-05-15T14:33:51.893087Z",
+  "lead_time": 22.85,
+  "last_action": null,
+  "project": 2,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}

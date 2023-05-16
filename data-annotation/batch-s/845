@@ -1,0 +1,45 @@
+{
+  "id": 845,
+  "created_username": " sebastian.pfaff@gmx.at, 1",
+  "created_ago": "0\u00a0minutes",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "sebastian.pfaff@gmx.at"
+  },
+  "task": {
+    "id": 1199,
+    "data": {
+      "image": "/data/local-files/?d=Data/WZ-II-397_0005000-0005326/Rohdaten/0005147_2.jpg"
+    },
+    "meta": {},
+    "created_at": "2023-05-15T13:18:52.466239Z",
+    "updated_at": "2023-05-15T13:18:52.466251Z",
+    "is_labeled": false,
+    "overlap": 1,
+    "inner_id": 823,
+    "total_annotations": 0,
+    "cancelled_annotations": 1,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 2,
+    "updated_by": null,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [],
+  "was_cancelled": true,
+  "ground_truth": false,
+  "created_at": "2023-05-15T14:35:04.526376Z",
+  "updated_at": "2023-05-15T14:35:04.526426Z",
+  "lead_time": 0.371,
+  "last_action": null,
+  "project": 2,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}
