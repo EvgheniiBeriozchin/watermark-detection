@@ -1,1 +1,0 @@
-This file is a placeholder for adding the folder to Git. Remove it as soon as you start labeling.
