@@ -7,7 +7,7 @@ from annotation import Annotation, BoundingBox, Flag, GeographicalSource, Path
 BATCHES_PATH = "./data-annotation/"
 BATCHES_FOLDERS_START = "batch-"
 SACHSEN_FOLDER_NAME = "WZ_II_Sachsen"
-RAW_IMAGE_PATH = "../data/"
+
 
 def load_raw_annotations():
     annotations = []
@@ -73,23 +73,6 @@ def parse_raw_annotations(raw_annotations):
         annotations.append(annotation)
 
     return annotations
-
-def check_folders_exist(annotations: List[Annotation]):
-    folders = list(set([annotation.path.folder_name for annotation in annotations]))
-    missing_folders = []
-    for folder in folders:
-        if not os.path.isdir(os.path.join(RAW_IMAGE_PATH, folder)):
-            missing_folders.append(folder)
-
-    if len(missing_folders) > 0:
-        print("The following folders are missing:")
-        for folder in missing_folders:
-            print(folder)
-    
-    assert len(missing_folders) == 0
-
-def check_images_exist(annotations):
-    pass
 
 if __name__=='__main__':
     raw_annotations = load_raw_annotations()
