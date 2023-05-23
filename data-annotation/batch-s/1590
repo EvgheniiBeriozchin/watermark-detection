@@ -1,0 +1,66 @@
+{
+  "id": 1590,
+  "created_username": " sebastian.pfaff@gmx.at, 1",
+  "created_ago": "0\u00a0minutes",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "sebastian.pfaff@gmx.at"
+  },
+  "task": {
+    "id": 1941,
+    "data": {
+      "image": "/data/local-files/?d=Data/WZ-II-399_0006000-0006533/0006189_1-01.png"
+    },
+    "meta": {},
+    "created_at": "2023-05-17T13:05:32.668458Z",
+    "updated_at": "2023-05-17T13:05:32.668469Z",
+    "is_labeled": true,
+    "overlap": 1,
+    "inner_id": 1564,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 2,
+    "updated_by": null,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [
+    {
+      "original_width": 894,
+      "original_height": 1077,
+      "image_rotation": 0,
+      "value": {
+        "x": 12.601626016260164,
+        "y": 10.623946037099504,
+        "width": 76.829268292683,
+        "height": 80.1011804384486,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Watermark"
+        ]
+      },
+      "id": "QO6NWKal2d",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    }
+  ],
+  "was_cancelled": false,
+  "ground_truth": false,
+  "created_at": "2023-05-17T15:31:56.961850Z",
+  "updated_at": "2023-05-17T15:31:56.961884Z",
+  "lead_time": 23.891,
+  "last_action": null,
+  "project": 2,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}

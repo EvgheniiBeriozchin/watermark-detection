@@ -1,0 +1,79 @@
+{
+  "id": 1941,
+  "created_username": " sebastian.pfaff@gmx.at, 1",
+  "created_ago": "0\u00a0minutes",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "sebastian.pfaff@gmx.at"
+  },
+  "task": {
+    "id": 2292,
+    "data": {
+      "image": "/data/local-files/?d=Data/WZ-II-399_0006000-0006533/0006433_2.png"
+    },
+    "meta": {},
+    "created_at": "2023-05-17T13:05:33.858319Z",
+    "updated_at": "2023-05-17T13:05:33.858330Z",
+    "is_labeled": true,
+    "overlap": 1,
+    "inner_id": 1915,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 2,
+    "updated_by": null,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [
+    {
+      "original_width": 567,
+      "original_height": 666,
+      "image_rotation": 0,
+      "value": {
+        "x": 18.089430894308926,
+        "y": 20.588235294117666,
+        "width": 72.15447154471545,
+        "height": 63.148788927335616,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Drawing"
+        ]
+      },
+      "id": "D3fWex3Git",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "value": {
+        "choices": [
+          "IW",
+          "SLBB"
+        ]
+      },
+      "id": "QyeKZYecQ-",
+      "from_name": "otherOptions",
+      "to_name": "image",
+      "type": "choices",
+      "origin": "manual"
+    }
+  ],
+  "was_cancelled": false,
+  "ground_truth": false,
+  "created_at": "2023-05-17T18:50:03.847106Z",
+  "updated_at": "2023-05-17T18:50:03.847131Z",
+  "lead_time": 15.861,
+  "last_action": null,
+  "project": 2,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}

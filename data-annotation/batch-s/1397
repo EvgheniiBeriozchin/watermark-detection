@@ -1,0 +1,78 @@
+{
+  "id": 1397,
+  "created_username": " sebastian.pfaff@gmx.at, 1",
+  "created_ago": "0\u00a0minutes",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "sebastian.pfaff@gmx.at"
+  },
+  "task": {
+    "id": 1748,
+    "data": {
+      "image": "/data/local-files/?d=Data/WZ-II-399_0006000-0006533/0006003_1-01.png"
+    },
+    "meta": {},
+    "created_at": "2023-05-17T13:05:32.000884Z",
+    "updated_at": "2023-05-17T13:05:32.000895Z",
+    "is_labeled": true,
+    "overlap": 1,
+    "inner_id": 1371,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 2,
+    "updated_by": null,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [
+    {
+      "original_width": 589,
+      "original_height": 946,
+      "image_rotation": 0,
+      "value": {
+        "x": 19.230769230769226,
+        "y": 14.21725239616614,
+        "width": 60.51282051282048,
+        "height": 73.80191693290732,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Drawing"
+        ]
+      },
+      "id": "nNltnkJBSO",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "value": {
+        "choices": [
+          "SLBB"
+        ]
+      },
+      "id": "gkEvWymFR0",
+      "from_name": "otherOptions",
+      "to_name": "image",
+      "type": "choices",
+      "origin": "manual"
+    }
+  ],
+  "was_cancelled": false,
+  "ground_truth": false,
+  "created_at": "2023-05-17T13:07:59.407846Z",
+  "updated_at": "2023-05-17T13:07:59.407866Z",
+  "lead_time": 21.863,
+  "last_action": null,
+  "project": 2,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}
