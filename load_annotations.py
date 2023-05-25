@@ -36,6 +36,7 @@ def parse_raw_annotations(raw_annotations):
             )
         
         if len(raw_annotation["annotations"]) > 1:
+            continue
             raise Exception("The file with id {} has multiple annotations".format(raw_annotation["id"]))
         
         annotation_results = raw_annotation["annotations"][0]["result"]
