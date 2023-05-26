@@ -18,6 +18,9 @@ def load_and_preprocess_raw_image(annotation: Annotation):
     processed_images[Label.Drawing] = []
     processed_images[Label.Watermark] = []
 
+    if not image:
+        return processed_images
+
     for bounding_box in annotation.bounding_boxes:
         start_row = floor(bounding_box.y * 0.01 * image.shape[0])
         end_row = ceil((bounding_box.y + bounding_box.height) * image.shape[0] * 0.01)
