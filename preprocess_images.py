@@ -18,7 +18,7 @@ def load_and_preprocess_raw_image(annotation: Annotation):
     processed_images[Label.Drawing] = []
     processed_images[Label.Watermark] = []
 
-    if not image:
+    if image is None:
         return processed_images
 
     for bounding_box in annotation.bounding_boxes:
