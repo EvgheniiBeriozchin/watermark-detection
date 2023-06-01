@@ -2,8 +2,7 @@ import os
 
 from typing import List
 from annotation import Annotation
-
-RAW_IMAGE_PATH = "../data/"
+from constants import RAW_IMAGE_PATH
 
 def check_folders_exist(annotations: List[Annotation]):
     folders = list(set([annotation.path.folder_name for annotation in annotations]))
@@ -18,6 +17,8 @@ def check_folders_exist(annotations: List[Annotation]):
             print(folder)
     
     assert len(missing_folders) == 0
+
+    print ("Checking Folders: All good!")
 
 def check_images_exist(annotations):
     pass

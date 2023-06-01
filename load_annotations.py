@@ -2,7 +2,7 @@ import os
 import json
 from typing import List
 
-from annotation import Annotation, BoundingBox, Flag, GeographicalSource, Path
+from annotation import Annotation, BoundingBox, Flag, GeographicalSource, Label, Path
 
 BATCHES_PATH = "./data-annotation/"
 BATCHES_FOLDERS_START = "batch-"
@@ -36,6 +36,7 @@ def parse_raw_annotations(raw_annotations):
             )
         
         if len(raw_annotation["annotations"]) > 1:
+            continue
             raise Exception("The file with id {} has multiple annotations".format(raw_annotation["id"]))
         
         annotation_results = raw_annotation["annotations"][0]["result"]
@@ -58,7 +59,7 @@ def parse_raw_annotations(raw_annotations):
                                         width=raw_bounding_box["width"],
                                         height=raw_bounding_box["height"],
                                         rotation=raw_bounding_box["rotation"],
-                                        label=raw_bounding_box["rectanglelabels"][0],
+                                        label=Label[raw_bounding_box["rectanglelabels"][0]],
                                         )
                                     )
 

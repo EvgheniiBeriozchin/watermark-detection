@@ -1,4 +1,4 @@
 from numpy import ndarray
 
-def preprocess_watermarks(image: ndarray):
+def preprocess_watermark(image: ndarray):
     return image
