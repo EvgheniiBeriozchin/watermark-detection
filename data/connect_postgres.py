@@ -1,6 +1,5 @@
 import psycopg2
 
-
 def get_postgresql_connection():
     try:
         dbname = ''
