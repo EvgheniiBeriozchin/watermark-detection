@@ -1,0 +1,98 @@
+{
+  "id": 3640,
+  "created_username": " sebastian.pfaff@gmx.at, 1",
+  "created_ago": "0\u00a0minutes",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "sebastian.pfaff@gmx.at"
+  },
+  "task": {
+    "id": 4237,
+    "data": {
+      "image": "/data/local-files/?d=Data/WZ-II-430/0024160_2.jpg"
+    },
+    "meta": {},
+    "created_at": "2023-06-04T20:53:55.364177Z",
+    "updated_at": "2023-06-04T20:53:55.364193Z",
+    "is_labeled": true,
+    "overlap": 1,
+    "inner_id": 3612,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 2,
+    "updated_by": null,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 53.733165741973885,
+        "y": 1.9442402164471468,
+        "width": 24.071265243874226,
+        "height": 41.80144597283141,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Watermark"
+        ]
+      },
+      "id": "tTD-xYN2a-",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 70.1803176244539,
+        "y": 78.18856193001263,
+        "width": 20.527050454523774,
+        "height": 11.090739428885191,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Watermark"
+        ]
+      },
+      "id": "t1CFCRwMO8",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "value": {
+        "choices": [
+          "MII"
+        ]
+      },
+      "id": "Uw7krn8EE-",
+      "from_name": "otherOptions",
+      "to_name": "image",
+      "type": "choices",
+      "origin": "manual"
+    }
+  ],
+  "was_cancelled": false,
+  "ground_truth": false,
+  "created_at": "2023-06-04T22:29:57.791507Z",
+  "updated_at": "2023-06-04T22:29:57.791528Z",
+  "lead_time": 47.52,
+  "last_action": null,
+  "project": 2,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}

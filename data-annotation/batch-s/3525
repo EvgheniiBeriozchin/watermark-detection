@@ -1,0 +1,58 @@
+{
+  "id": 3525,
+  "created_username": " sebastian.pfaff@gmx.at, 1",
+  "created_ago": "0\u00a0minutes",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "sebastian.pfaff@gmx.at"
+  },
+  "task": {
+    "id": 4122,
+    "data": {
+      "image": "/data/local-files/?d=Data/WZ-II-430/0024078_1.jpg"
+    },
+    "meta": {},
+    "created_at": "2023-06-04T20:53:54.796571Z",
+    "updated_at": "2023-06-04T21:31:37.613866Z",
+    "is_labeled": true,
+    "overlap": 1,
+    "inner_id": 3497,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 2,
+    "updated_by": 1,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [
+    {
+      "value": {
+        "choices": [
+          "NII"
+        ]
+      },
+      "id": "YdntO3codO",
+      "from_name": "otherOptions",
+      "to_name": "image",
+      "type": "choices",
+      "origin": "manual"
+    }
+  ],
+  "was_cancelled": false,
+  "ground_truth": false,
+  "created_at": "2023-06-04T21:31:27.937796Z",
+  "updated_at": "2023-06-04T21:31:37.653121Z",
+  "lead_time": 28.711000000000002,
+  "last_action": null,
+  "project": 2,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}

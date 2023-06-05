@@ -1,0 +1,99 @@
+{
+  "id": 3503,
+  "created_username": " sebastian.pfaff@gmx.at, 1",
+  "created_ago": "0\u00a0minutes",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "sebastian.pfaff@gmx.at"
+  },
+  "task": {
+    "id": 4100,
+    "data": {
+      "image": "/data/local-files/?d=Data/WZ-II-430/0024058_1.jpg"
+    },
+    "meta": {},
+    "created_at": "2023-06-04T20:53:54.696402Z",
+    "updated_at": "2023-06-04T20:53:54.696418Z",
+    "is_labeled": true,
+    "overlap": 1,
+    "inner_id": 3475,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 2,
+    "updated_by": null,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 36.615853535929965,
+        "y": 22.181176535468115,
+        "width": 24.41049875255822,
+        "height": 40.11087522053919,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Drawing"
+        ]
+      },
+      "id": "NbQZNRHVfK",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 77.80859916782245,
+        "y": 35.85953327649828,
+        "width": 16.36615811373093,
+        "height": 9.981501843649598,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Drawing"
+        ]
+      },
+      "id": "YYeNVVVP21",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "value": {
+        "choices": [
+          "MII",
+          "OABB"
+        ]
+      },
+      "id": "w1-7a7Uuon",
+      "from_name": "otherOptions",
+      "to_name": "image",
+      "type": "choices",
+      "origin": "manual"
+    }
+  ],
+  "was_cancelled": false,
+  "ground_truth": false,
+  "created_at": "2023-06-04T21:24:44.632659Z",
+  "updated_at": "2023-06-04T21:24:44.632678Z",
+  "lead_time": 32.155,
+  "last_action": null,
+  "project": 2,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}

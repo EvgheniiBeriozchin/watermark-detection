@@ -1,0 +1,119 @@
+{
+  "id": 3452,
+  "created_username": " sebastian.pfaff@gmx.at, 1",
+  "created_ago": "0\u00a0minutes",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "sebastian.pfaff@gmx.at"
+  },
+  "task": {
+    "id": 4049,
+    "data": {
+      "image": "/data/local-files/?d=Data/WZ-II-430/0024014_2.jpg"
+    },
+    "meta": {},
+    "created_at": "2023-06-04T20:53:54.436153Z",
+    "updated_at": "2023-06-04T20:53:54.436170Z",
+    "is_labeled": true,
+    "overlap": 1,
+    "inner_id": 3424,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 2,
+    "updated_by": null,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 27.89589416076541,
+        "y": 43.4981386383557,
+        "width": 17.809504800087776,
+        "height": 36.486278302347344,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Watermark"
+        ]
+      },
+      "id": "jYjTElI2oh",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 53.757572207934025,
+        "y": 59.405649522569306,
+        "width": 16.38853014878423,
+        "height": 8.206250112075091,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Watermark"
+        ]
+      },
+      "id": "4WcWNEFut8",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 83.23036374712292,
+        "y": 43.36252312708425,
+        "width": 12.734836101572151,
+        "height": 37.47263062858707,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Watermark"
+        ]
+      },
+      "id": "gHkmv85ubb",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "value": {
+        "choices": [
+          "IW",
+          "MII"
+        ]
+      },
+      "id": "QTdBxlVnqP",
+      "from_name": "otherOptions",
+      "to_name": "image",
+      "type": "choices",
+      "origin": "manual"
+    }
+  ],
+  "was_cancelled": false,
+  "ground_truth": false,
+  "created_at": "2023-06-04T21:04:25.288567Z",
+  "updated_at": "2023-06-04T21:04:25.288587Z",
+  "lead_time": 82.237,
+  "last_action": null,
+  "project": 2,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}

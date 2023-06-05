@@ -1,0 +1,45 @@
+{
+  "id": 2601,
+  "created_username": " sebastian.pfaff@gmx.at, 1",
+  "created_ago": "0\u00a0minutes",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "sebastian.pfaff@gmx.at"
+  },
+  "task": {
+    "id": 3198,
+    "data": {
+      "image": "/data/local-files/?d=Data/WZ-II-382_0028599-0026851/.0028646_1.jpg.icloud"
+    },
+    "meta": {},
+    "created_at": "2023-05-30T11:34:08.542205Z",
+    "updated_at": "2023-05-30T11:34:08.542225Z",
+    "is_labeled": false,
+    "overlap": 1,
+    "inner_id": 2573,
+    "total_annotations": 0,
+    "cancelled_annotations": 1,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 2,
+    "updated_by": null,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [],
+  "was_cancelled": true,
+  "ground_truth": false,
+  "created_at": "2023-05-30T17:02:34.899346Z",
+  "updated_at": "2023-05-30T17:02:34.899384Z",
+  "lead_time": 0.387,
+  "last_action": null,
+  "project": 2,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}
