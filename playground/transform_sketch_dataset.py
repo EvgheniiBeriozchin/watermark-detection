@@ -1,5 +1,6 @@
 import os
 import shutil
+import random
 
 RAW_IMAGE_PATH = "../../data/sketch_dataset_raw/"
 IMAGE_PATH = "../../data/sketch_dataset/A"
