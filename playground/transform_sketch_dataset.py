@@ -2,7 +2,7 @@ import os
 import shutil
 import random
 
-RAW_IMAGE_PATH = "../../data/sketches_png/png/"
+RAW_IMAGE_PATH = "../../data/sketch_dataset_raw/"
 IMAGE_PATH = "../../data/sketch_dataset/A"
 
 val_percentage = 0.15
