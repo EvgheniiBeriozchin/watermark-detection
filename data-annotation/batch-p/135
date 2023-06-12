@@ -1,0 +1,78 @@
+{
+  "id": 135,
+  "created_username": " sojabohnen_portal01@icloud.com, 1",
+  "created_ago": "0\u00a0minutes",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "sojabohnen_portal01@icloud.com"
+  },
+  "task": {
+    "id": 134,
+    "data": {
+      "image": "/data/local-files/?d=Data/WZ-II-383_1-0029630-0029850/0029723_1.jpg"
+    },
+    "meta": {},
+    "created_at": "2023-05-15T13:15:58.266117Z",
+    "updated_at": "2023-05-15T13:15:58.266153Z",
+    "is_labeled": true,
+    "overlap": 1,
+    "inner_id": 134,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": null,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 42.9940119760479,
+        "y": 26.677316293929714,
+        "width": 21.79640718562874,
+        "height": 26.517571884984026,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Watermark"
+        ]
+      },
+      "id": "4hu5N8c1bd",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "value": {
+        "choices": [
+          "SLBB"
+        ]
+      },
+      "id": "UWla75eFtJ",
+      "from_name": "otherOptions",
+      "to_name": "image",
+      "type": "choices",
+      "origin": "manual"
+    }
+  ],
+  "was_cancelled": false,
+  "ground_truth": false,
+  "created_at": "2023-05-15T19:55:58.979105Z",
+  "updated_at": "2023-05-15T19:55:58.979149Z",
+  "lead_time": 13.372,
+  "last_action": null,
+  "project": 1,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}

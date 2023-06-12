@@ -1,0 +1,100 @@
+{
+  "id": 15,
+  "created_username": " sojabohnen_portal01@icloud.com, 1",
+  "created_ago": "0\u00a0minutes",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "sojabohnen_portal01@icloud.com"
+  },
+  "task": {
+    "id": 14,
+    "data": {
+      "image": "/data/local-files/?d=Data/WZ-II-383_1-0029630-0029850/0029637_2.jpg"
+    },
+    "meta": {},
+    "created_at": "2023-05-15T13:15:56.814873Z",
+    "updated_at": "2023-05-15T13:15:56.814909Z",
+    "is_labeled": true,
+    "overlap": 1,
+    "inner_id": 14,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": null,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 33.273381294964025,
+        "y": 40.407673860911274,
+        "width": 24.190647482014388,
+        "height": 10.311750599520384,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Watermark"
+        ]
+      },
+      "id": "tL3vQbmV8c",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 94.51438848920863,
+        "y": 28.05755395683453,
+        "width": 5.485611510791367,
+        "height": 32.49400479616307,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Watermark"
+        ]
+      },
+      "id": "-dOeGms59A",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "value": {
+        "choices": [
+          "IW",
+          "MII",
+          "RBB"
+        ]
+      },
+      "id": "OTIapG1YNN",
+      "from_name": "otherOptions",
+      "to_name": "image",
+      "type": "choices",
+      "origin": "manual"
+    }
+  ],
+  "was_cancelled": false,
+  "ground_truth": false,
+  "created_at": "2023-05-15T13:52:46.044755Z",
+  "updated_at": "2023-05-15T13:52:46.044799Z",
+  "lead_time": 24.468,
+  "last_action": null,
+  "project": 1,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}

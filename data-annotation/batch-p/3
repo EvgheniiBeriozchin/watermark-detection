@@ -1,0 +1,100 @@
+{
+  "id": 3,
+  "created_username": " sojabohnen_portal01@icloud.com, 1",
+  "created_ago": "1\u00a0minute",
+  "completed_by": {
+    "id": 1,
+    "first_name": "",
+    "last_name": "",
+    "email": "sojabohnen_portal01@icloud.com"
+  },
+  "task": {
+    "id": 1,
+    "data": {
+      "image": "/data/local-files/?d=Data/WZ-II-383_1-0029630-0029850/0029630_1.jpg"
+    },
+    "meta": {},
+    "created_at": "2023-05-15T13:15:56.566360Z",
+    "updated_at": "2023-05-15T13:27:42.764264Z",
+    "is_labeled": true,
+    "overlap": 1,
+    "inner_id": 1,
+    "total_annotations": 2,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": 1,
+    "file_upload": null,
+    "comment_authors": []
+  },
+  "result": [
+    {
+      "value": {
+        "choices": [
+          "TII",
+          "MII",
+          "SLBB"
+        ]
+      },
+      "id": "op4jROXXvg",
+      "from_name": "otherOptions",
+      "to_name": "image",
+      "type": "choices",
+      "origin": "manual"
+    },
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 40.647482014388494,
+        "y": 29.736211031175074,
+        "width": 24.550359712230208,
+        "height": 41.96642685851318,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Drawing"
+        ]
+      },
+      "id": "DTS0ynxJXu",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    },
+    {
+      "original_width": 2592,
+      "original_height": 1944,
+      "image_rotation": 0,
+      "value": {
+        "x": 42.26618705035969,
+        "y": 11.031175059952043,
+        "width": 24.460431654676285,
+        "height": 13.309352517985609,
+        "rotation": 0,
+        "rectanglelabels": [
+          "Drawing"
+        ]
+      },
+      "id": "m7C5SMyQaj",
+      "from_name": "label",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "origin": "manual"
+    }
+  ],
+  "was_cancelled": false,
+  "ground_truth": false,
+  "created_at": "2023-05-15T13:26:08.250975Z",
+  "updated_at": "2023-05-15T13:27:42.790209Z",
+  "lead_time": 14.804,
+  "last_action": null,
+  "project": 1,
+  "updated_by": 1,
+  "parent_prediction": null,
+  "parent_annotation": null,
+  "last_created_by": null
+}
