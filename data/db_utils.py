@@ -100,7 +100,6 @@ def query_images(label: Optional[Label], flags: List[Flag]):
 
 
 # to be added
-#def insert_encoding_to_db():
 
 raw_annotations = load_raw_annotations()
 annotations = parse_raw_annotations(raw_annotations)

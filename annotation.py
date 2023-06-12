@@ -17,6 +17,7 @@ class Flag(Enum):
     NBB = "NBB",
     OMBB = "OMBB"
 
+
 class Label(Enum):
     Watermark = "Watermark",
     Drawing = "Drawing"
