@@ -10,6 +10,12 @@ class Flag(Enum):
     TOW = "TOW",
     MII = "MII",
     SLBB = "SLBB",
+    TII = "TII",
+    IW = "IW",
+    RBB = "RBB",
+    MBB = "MBB",
+    NBB = "NBB",
+    OMBB = "OMBB"
 
 class Label(Enum):
     Watermark = "Watermark",

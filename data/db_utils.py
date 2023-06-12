@@ -3,7 +3,7 @@ from typing import Optional, List
 from psycopg2.extras import execute_values
 from connect_postgres import get_postgresql_connection
 from annotation import Annotation, BoundingBox, Flag, GeographicalSource, Label, Path
-from load_annotations import parse_raw_annotations
+from load_annotations import parse_raw_annotations, load_raw_annotations
 
 
 def insert_annotations_to_db(annotations):
@@ -12,19 +12,30 @@ def insert_annotations_to_db(annotations):
         connection = get_postgresql_connection()
         cursor = connection.cursor()
 
+        print(len(annotations))
+
         for annotation in annotations:
+            print(annotation)
             # Insert into RawImage table
             cursor.execute(
                 """
-                INSERT INTO RawImage (id, path, annotation_id, geographical_region, text_in_image, text_on_watermark, incomplete, multiple_bounding_boxes, no_bounding_boxes, lines_in_bounding_boxes, ruler_in_bounding_boxes, other_markings_in_bounding_boxes)
+                INSERT INTO RawImage (id, path, annotation_id, geographical_region, test_in_image, text_on_watermark, incomplete, multiple_bounding_boxes, no_bounding_boxes, lines_in_bounding_boxes, ruler_in_bounding_boxes, other_markings_in_bounding_boxes)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 """,
-                (annotation.id, annotation.path.folder_name + "/" + annotation.path.file_name, annotation.source_unique_id, annotation.path.geographical_source.value,
-                any(flag == Flag.TEXT_IN_IMAGE for flag in annotation.flags), any(flag == Flag.TEXT_ON_WATERMARK for flag in annotation.flags), any(flag == Flag.INCOMPLETE for flag in annotation.flags),
-                any(flag == Flag.MULTIPLE_BOUNDING_BOXES for flag in annotation.flags), any(flag == Flag.NO_BOUNDING_BOXES for flag in annotation.flags),
-                any(flag == Flag.LINES_IN_BOUNDING_BOXES for flag in annotation.flags), any(flag == Flag.RULER_IN_BOUNDING_BOXES for flag in annotation.flags),
-                any(flag == Flag.OTHER_MARKINGS_IN_BOUNDING_BOXES for flag in annotation.flags))
+                (annotation.id,
+                 annotation.path.folder_name + "/" + annotation.path.file_name,
+                 annotation.source_unique_id,
+                 annotation.path.geographical_source.value,
+                any(flag == Flag.TII for flag in annotation.flags),
+                any(flag == Flag.TOW for flag in annotation.flags),
+                any(flag == Flag.IW for flag in annotation.flags),
+                any(flag == Flag.MBB for flag in annotation.flags),
+                any(flag == Flag.NBB for flag in annotation.flags),
+                any(flag == Flag.SLBB for flag in annotation.flags),
+                any(flag == Flag.RBB for flag in annotation.flags),
+                any(flag == Flag.OMBB for flag in annotation.flags))
             )
+            print("Executed")
 
 
             # Insert into BoundingBox table
@@ -90,3 +101,7 @@ def query_images(label: Optional[Label], flags: List[Flag]):
 
 # to be added
 #def insert_encoding_to_db():
+
+raw_annotations = load_raw_annotations()
+annotations = parse_raw_annotations(raw_annotations)
+insert_annotations_to_db(annotations)
