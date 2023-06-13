@@ -20,6 +20,3 @@ if __name__=='__main__':
             moved_folder = os.path.join(IMAGE_PATH, random.choices(["val", "train"], weights=[1, int(100 * val_percentage) - 1])[0])
             shutil.move(image_path, os.path.join(moved_folder, "{}.png".format(index)))
             index += 1
-            
-            if (index > 5):
-                break
