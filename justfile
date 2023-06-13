@@ -1,10 +1,10 @@
-
-
+SKETCH_DATASET_PATH:="sketch_dataset"
+DNB_DATASET_PATH:="dnb/processed/"
 
 setup-model-training:
   cd ..
   mkdir data
-  git clone https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix.git
+  git clone https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix.git gan-training
   pip install -r requirements.txt
 
 setup-python:
@@ -29,9 +29,11 @@ prepare-datasets:
   just prepare-sketch-dataset
   just prepare-dnb-dataset
 
-train-sketch-model:
-  @echo 'The sketch dataset training needs to be implemented.'
+train-sketch-model modelname:
+  cd ../gan-training/
+  python train.py --dataroot ../data/{{SKETCH_DATASET_PATH}}/AB/ --name modelname --model pix2pix --direction BtoA
 
-train-dnb-model:
-  @echo 'The dnb dataset training needs to be implemented.'
+train-dnb-model modelname:
+  cd ../gan-training/
+  python train.py --dataroot ../data/{{DNB_DATASET_PATH}} --name modelname --model cycle_gan --batch_size=1 
 
