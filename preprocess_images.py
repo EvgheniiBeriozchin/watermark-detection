@@ -113,7 +113,7 @@ def preprocess_drawing(image: ndarray):
     return img_dilation
   
   # rotate image
-  img=cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE)
+  img=cv.rotate(image, cv.ROTATE_90_CLOCKWISE)
 
   # transform source image to gray if it is not already
   if len(img.shape) != 2:
