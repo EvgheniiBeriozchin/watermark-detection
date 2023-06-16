@@ -32,24 +32,3 @@ class MySurfDriveClient:
         self.nc.get_file(remote_file, local_file)
 
 
-# Download only images in specific folder - change this to WZ_II_Thueringen and directory to final directory
-
-my_surfdrive_client = MySurfDriveClient()
-root_content_list = my_surfdrive_client.list_content()
-print(root_content_list)
-
-for entry in root_content_list:
-    if entry.endswith('WZ_II_Thueringen/'):
-        print('Inhalt von WZ_II_Thueringen:', entry)
-        os.mkdir('./' + entry)
-        subfolder_content_list = my_surfdrive_client.list_content(entry)
-        for entry_sub in subfolder_content_list:
-            file_list = my_surfdrive_client.list_content(entry_sub)
-            os.mkdir('./' + entry_sub)
-            for f in file_list:
-                if not f.endswith('/'):
-                    file_name = os.path.basename(f)
-                    my_surfdrive_client.get_file_from_remote(f, './' + f)
-            print(subfolder_content_list)
-
-my_surfdrive_client.logout()
