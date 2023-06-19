@@ -1,5 +1,5 @@
 SKETCH_DATASET_PATH:="sketch_dataset"
-DNB_DATASET_PATH:="dnb_processed"
+DNB_DATASET_PATH:="dnb/processed"
 
 setup-model-training:
   cd .. && mkdir data                            
@@ -31,7 +31,7 @@ download-datasets:
 transform-drawings path modelname:
   cp ../data/{{DNB_DATASET_PATH}}/{{path}}/* ../data/{{DNB_DATASET_PATH}}/tmp_src/test/
   python3 ../gan-training/datasets/combine_A_and_B.py --fold_A ../data/{{DNB_DATASET_PATH}}/tmp_src --fold_B ../data/{{DNB_DATASET_PATH}}/tmp_src  --fold_AB ../data/{{DNB_DATASET_PATH}}/tmp
-  cd ../gan-training && python3 test.py --dataroot ../data/{{DNB_DATASET_PATH}}/tmp/ --name {{modelname}} --model pix2pix --direction BtoA --num_test -1
+  cd ../gan-training && python3 test.py --dataroot ../data/{{DNB_DATASET_PATH}}/tmp/ --name {{modelname}} --model pix2pix --direction BtoA --num_test 3000000
   # rm -r ../data/{{DNB_DATASET_PATH}}/{{path}}/*
   mv ../gan-training/results/{{modelname}}/test_latest/images/*_fake_B.png ../data/{{DNB_DATASET_PATH}}/tmp2/{{path}}
   rm -r ../data/{{DNB_DATASET_PATH}}/tmp/*
