@@ -4,7 +4,7 @@ from annotation import Label, GeographicalSource
 RAW_IMAGE_PATH = "../data/dnb/raw/"
 
 GEOGRAPHICAL_SOURCES_PATH = {
-    GeographicalSource.Thuringen: "WZ_II_Thuringen",
+    GeographicalSource.Thuringen: "WZ_II_Thueringen",
     GeographicalSource.Sachsen: "WZ_II_Sachsen",
 }
 PROCESSED_IMAGE_TRAIN_PATH = {
