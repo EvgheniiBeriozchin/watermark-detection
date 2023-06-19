@@ -30,10 +30,11 @@ download-datasets:
 prepare-dnb-dataset modelname:
   python main.py
   cd ../data/{{DNB_DATASET_PATH}} && mkdir tmp
-  python ../gan-training/datasets/combine_A_and_B.py --fold_A ../data/{{DNB_DATASET_PATH}}/A --fold_B ../data/{{DNB_DATASET_PATH}}/A  --fold_AB ../data/{{DNB_DATASET_PATH}}/tmp   
+  python ../gan-training/datasets/combine_A_and_B.py --fold_A ../data/{{DNB_DATASET_PATH}}/trainB --fold_B ../data/{{DNB_DATASET_PATH}}/trainB  --fold_AB ../data/{{DNB_DATASET_PATH}}/tmp   
   python ../gan-training/test.py --dataroot ../data/{{DNB_DATASET_PATH}}/tmp/ --name {{modelname}} --model pix2pix --direction BtoA 
-  rm -r ../data/{{DNB_DATASET_PATH}}/A/*
-  mv ../gan-training/results/{{modelname}}/test_latest/images/*_fake_B.png ../data/{{DNB_DATASET_PATH}}/A/
+  rm ../data/{{DNB_DATASET_PATH}}/trainB/*
+  mv ../gan-training/results/{{modelname}}/test_latest/images/*_fake_B.png ../data/{{DNB_DATASET_PATH}}/trainB/
+  rm -r ../data/{{DNB_DATASET_PATH}}/tmp
 
 prepare-sketch-dataset:
   python drawing-processing/sketch-dataset-preparation/transform_sketch_dataset.py
