@@ -29,26 +29,26 @@ download-datasets:
 
 [private]
 transform-drawings path:
-cp ../data/{{DNB_DATASET_PATH}}/{{path}}/* ../data/{{DNB_DATASET_PATH}}/tmp_src/test/
-python3 ../gan-training/datasets/combine_A_and_B.py --fold_A ../data/{{DNB_DATASET_PATH}}/tmp_src --fold_B ../data/{{DNB_DATASET_PATH}}/tmp_src  --fold_AB ../data/{{DNB_DATASET_PATH}}/tmp
-cd ../gan-training && python3 test.py --dataroot ../data/{{DNB_DATASET_PATH}}/tmp/ --name {{modelname}} --model pix2pix --direction BtoA
-# rm -r ../data/{{DNB_DATASET_PATH}}/{{path}}/*
-mv ../gan-training/results/{{modelname}}/test_latest/images/*_fake_B.png ../data/{{DNB_DATASET_PATH}}/tmp2/{{path}}
-rm ../data/{{DNB_DATASET_PATH}}/tmp/*
-rm ../data/{{DNB_DATASET_PATH}}/tmp_src/test/*
-rm -r ../gan-training/results/{{modelname}}/test_latest
+  cp ../data/{{DNB_DATASET_PATH}}/{{path}}/* ../data/{{DNB_DATASET_PATH}}/tmp_src/test/
+  python3 ../gan-training/datasets/combine_A_and_B.py --fold_A ../data/{{DNB_DATASET_PATH}}/tmp_src --fold_B ../data/{{DNB_DATASET_PATH}}/tmp_src  --fold_AB ../data/{{DNB_DATASET_PATH}}/tmp
+  cd ../gan-training && python3 test.py --dataroot ../data/{{DNB_DATASET_PATH}}/tmp/ --name {{modelname}} --model pix2pix --direction BtoA
+  # rm -r ../data/{{DNB_DATASET_PATH}}/{{path}}/*
+  mv ../gan-training/results/{{modelname}}/test_latest/images/*_fake_B.png ../data/{{DNB_DATASET_PATH}}/tmp2/{{path}}
+  rm ../data/{{DNB_DATASET_PATH}}/tmp/*
+  rm ../data/{{DNB_DATASET_PATH}}/tmp_src/test/*
+  rm -r ../gan-training/results/{{modelname}}/test_latest
 
 
 prepare-dnb-dataset modelname:
-python3 main.py
-cd ../data/{{DNB_DATASET_PATH}} && mkdir tmp && mkdir tmp_src && mkdir tmp2
-cd ../data/{{DNB_DATASET_PATH}}/tmp_src && mkdir test
-cd ../data/{{DNB_DATASET_PATH}}/tmp2 && mkdir trainB && mkdir testB
-just transform-drawings trainB
-just transform-drawings testB
+  python3 main.py
+  cd ../data/{{DNB_DATASET_PATH}} && mkdir tmp && mkdir tmp_src && mkdir tmp2
+  cd ../data/{{DNB_DATASET_PATH}}/tmp_src && mkdir test
+  cd ../data/{{DNB_DATASET_PATH}}/tmp2 && mkdir trainB && mkdir testB
+  just transform-drawings trainB
+  just transform-drawings testB
 
-rm -r ../data/{{DNB_DATASET_PATH}}/tmp
-rm -r ../data/{{DNB_DATASET_PATH}}/tmp_src
+  rm -r ../data/{{DNB_DATASET_PATH}}/tmp
+  rm -r ../data/{{DNB_DATASET_PATH}}/tmp_src
 
 
 prepare-sketch-dataset:
