@@ -13,7 +13,8 @@ from VGG16_load_image import load_image
 import pickle
 import os
 
-FEATURE_DATABASE_PATH = "../../data/image-database/"
+IMAGE_DATABASE_PATH = "../../data/image-database/"
+
 
 def build_PCA_vector(images_path, save_features = False):
   '''
