@@ -13,9 +13,6 @@ from VGG16_load_image import load_image
 import pickle
 import os
 
-FEATURE_DATABASE_PATH = "../../data/image-database/"
-
-
 def build_PCA_vector(images_path, save_features = False):
   '''
   Input:
@@ -54,11 +51,6 @@ def build_PCA_vector(images_path, save_features = False):
   pca.fit(features)
 
   pca_features = pca.transform(features)
-
-  # Save featrues
-  if save_features == True:
-      save_path = os.path.join(FEATURE_DATABASE_PATH, 'VGG16_features.pkl')
-      pickle.dump([images, pca_features, pca], open(save_path, 'wb'))
 
   # Return image names, pca_features and pca
   return images, pca_features, pca
