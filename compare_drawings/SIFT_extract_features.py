@@ -12,7 +12,7 @@ from SIFT_computeFeatures import computeFeatures
 import glob
 import os
 
-def SIFT_exctract_features(images_path, k_means = 50, save_features = False):
+def SIFT_exctract_features(images_path, k_means = 50):
     # Images
     images = glob.glob(images_path + '/**/*.png', recursive=True)
     # List of features that stores
