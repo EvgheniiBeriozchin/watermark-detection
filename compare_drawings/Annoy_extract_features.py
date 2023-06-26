@@ -9,7 +9,7 @@ from annoy import AnnoyIndex
 import time
 import glob
 
-FEATURE_DATABASE_PATH = "/Users/sebastianpfaff/Documents/Studium/02_TUM/6. Semester/01_TUM Data Innovation Lab/17_upload_functions/"
+FEATURE_DATABASE_PATH = "../../data/image-database/"
 
 def build_annoy_index(images_path, save_index = False):
   # Get images
