@@ -13,7 +13,7 @@ from VGG16_load_image import load_image
 import pickle
 import os
 
-def build_PCA_vector(images_path, save_features = False):
+def build_PCA_vector(images_path):
   '''
   Input:
   images_path: folder path of images for which the features should be extracted.
