@@ -9,9 +9,7 @@ from annoy import AnnoyIndex
 import time
 import glob
 
-FEATURE_DATABASE_PATH = "../../data/image-database/"
-
-def build_annoy_index(images_path, save_index = False):
+def build_annoy_index(images_path):
   # Get images
   images = glob.glob(images_path + '/**/*.png', recursive=True)
 
@@ -45,10 +43,5 @@ def build_annoy_index(images_path, save_index = False):
 
   # build index
   annoy_index.build(10)
-
-  # Save index
-  if save_index == True:
-    save_path = os.path.join(FEATURE_DATABASE_PATH, 'watermark_index.ann')
-    annoy_index.save(save_path)
 
   return annoy_index, images
