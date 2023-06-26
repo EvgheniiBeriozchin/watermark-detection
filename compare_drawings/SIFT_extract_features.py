@@ -13,7 +13,7 @@ import glob
 import os
 
 
-FEATURE_DATABASE_PATH = "/Users/sebastianpfaff/Documents/Studium/02_TUM/6. Semester/01_TUM Data Innovation Lab/17_upload_functions/"
+FEATURE_DATABASE_PATH = "../../data/image-database/"
 
 ##############################################################################
 def SIFT_exctract_features(images_path, k_means = 50, save_features = False):
