@@ -12,10 +12,6 @@ from SIFT_computeFeatures import computeFeatures
 import glob
 import os
 
-
-FEATURE_DATABASE_PATH = "../../data/image-database/"
-
-##############################################################################
 def SIFT_exctract_features(images_path, k_means = 50, save_features = False):
     # Images
     images = glob.glob(images_path + '/**/*.png', recursive=True)
@@ -67,15 +63,5 @@ def SIFT_exctract_features(images_path, k_means = 50, save_features = False):
     # Put them into feature vector
     fv = np.reshape(temparr, (temparr.shape[0], temparr.shape[1]))
     del temparr
-
-    # Pickle codebook and
-    if save_features == True:
-        save_path = os.path.join(FEATURE_DATABASE_PATH, 'codebook.pkl')
-        # Save codebook as pickle file
-        pickle.dump(codebook, open(save_path, "wb"))
-        # Save features as pickle file
-        save_path = os.path.join(FEATURE_DATABASE_PATH, 'bow.pkl')
-        pickle.dump(fv, open(save_path, "wb"))
-        print('Bag-of-words features and codebook pickled!')
 
     return codebook, fv, images
