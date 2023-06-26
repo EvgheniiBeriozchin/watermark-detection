@@ -1,5 +1,5 @@
 import cv2
-import cv
+import cv2.cv as cv
 from numpy import ndarray
 
 def make_black_and_white(image: ndarray):
