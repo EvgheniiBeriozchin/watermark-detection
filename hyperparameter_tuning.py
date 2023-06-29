@@ -4,19 +4,21 @@ This script builds on train.py from https://github.com/junyanz/pytorch-CycleGAN-
 import time
 import importlib
 from functools import partial
+
+from options.train_options import TrainOptions
+from data import create_dataset
+from models import create_model
+
 from ray import tune
 from ray.air import Checkpoint, session
 from ray.tune.schedulers import ASHAScheduler
-
-
-gan_training = importlib.import_module("..gan-training")
 
 def train(config, *, dataset, opt):
     opt.batch_size = config["batch_size"]
     opt.lr = config["lr"]
     opt.num_epochs = 25
 
-    model = gan_training.models.create_model(opt)      # create a model given opt.model and other options
+    model = create_model(opt)      # create a model given opt.model and other options
     model.setup(opt)               # regular setup: load and print networks; create schedulers
     total_iters = 0                # the total number of training iterations
 
@@ -55,8 +57,8 @@ if __name__ == '__main__':
         reduction_factor=2,
     )
 
-    opt = gan_training.options.train_options.TrainOptions().parse()
-    dataset = gan_training.data.create_dataset(opt)
+    opt = TrainOptions().parse()
+    dataset = create_dataset(opt)
     dataset_size = len(dataset)
     print('The number of training images = %d' % dataset_size)
     
