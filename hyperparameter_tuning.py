@@ -14,6 +14,7 @@ gan_training = importlib.import_module("..gan-training")
 def train(config, *, dataset, opt):
     opt.batch_size = config["batch_size"]
     opt.lr = config["lr"]
+    opt.num_epochs = 25
 
     model = gan_training.models.create_model(opt)      # create a model given opt.model and other options
     model.setup(opt)               # regular setup: load and print networks; create schedulers
