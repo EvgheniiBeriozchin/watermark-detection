@@ -6,7 +6,7 @@ def create_tables():
     """ create tables in the PostgreSQL database"""
     commands = (
         """
-		CREATE TABLE RawImage (
+		CREATE TABLE raw_image (
                 id SERIAL PRIMARY KEY,
                 path TEXT UNIQUE,
                 annotation_id TEXT UNIQUE,
@@ -21,9 +21,9 @@ def create_tables():
                 other_markings_in_bounding_boxes BOOLEAN
                 )
 		""",
-        """ CREATE TABLE BoundingBox (
+        """ CREATE TABLE bounding_box (
                 id SERIAL PRIMARY KEY,
-                raw_image_id INTEGER REFERENCES RawImage (id),
+                raw_image_id INTEGER REFERENCES raw_image (id),
                 x FLOAT,
                 y FLOAT,
                 width FLOAT,
@@ -33,16 +33,16 @@ def create_tables():
                 )
         """,
         """
-		CREATE TABLE Image (
+		CREATE TABLE image (
                 id SERIAL PRIMARY KEY,
-                bounding_box_id INTEGER UNIQUE REFERENCES BoundingBox (id),
+                bounding_box_id INTEGER UNIQUE REFERENCES bounding_box (id),
                 path TEXT UNIQUE
                 )  
 		""",
         """
-		CREATE TABLE Encoding (
+		CREATE TABLE encoding (
                 id SERIAL PRIMARY KEY,
-                image_id INTEGER REFERENCES Image (id),
+                image_id INTEGER REFERENCES image (id),
                 path TEXT UNIQUE,
                 model_version TEXT
                 )

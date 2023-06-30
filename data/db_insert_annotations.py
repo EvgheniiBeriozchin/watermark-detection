@@ -1,8 +1,7 @@
 import psycopg2
 from typing import Optional, List
-from psycopg2.extras import execute_values
 from connect_postgres import get_postgresql_connection
-from annotation import Annotation, BoundingBox, Flag, GeographicalSource, Label, Path
+from annotation import Flag, Label
 from load_annotations import parse_raw_annotations, load_raw_annotations
 
 
@@ -16,10 +15,10 @@ def insert_annotations_to_db(annotations):
 
         for annotation in annotations:
             print(annotation)
-            # Insert into RawImage table
+            # Insert into raw_image table
             cursor.execute(
                 """
-                INSERT INTO RawImage (id, path, annotation_id, geographical_region, test_in_image, text_on_watermark, incomplete, multiple_bounding_boxes, no_bounding_boxes, lines_in_bounding_boxes, ruler_in_bounding_boxes, other_markings_in_bounding_boxes)
+                INSERT INTO raw_image (id, path, annotation_id, geographical_region, test_in_image, text_on_watermark, incomplete, multiple_bounding_boxes, no_bounding_boxes, lines_in_bounding_boxes, ruler_in_bounding_boxes, other_markings_in_bounding_boxes)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 """,
                 (annotation.id,
@@ -38,12 +37,12 @@ def insert_annotations_to_db(annotations):
             print("Executed")
 
 
-            # Insert into BoundingBox table
+            # Insert into bounding_box table
             for bounding_box in annotation.bounding_boxes:
                 cursor.execute(
                     """
-                    INSERT INTO BoundingBox (id, raw_image_id, x, y, width, height, rotation, label)
-                    VALUES (DEFAULT, (SELECT id FROM RawImage WHERE path = %s), %s, %s, %s, %s, %s, %s)
+                    INSERT INTO bounding_box (id, raw_image_id, x, y, width, height, rotation, label)
+                    VALUES (DEFAULT, (SELECT id FROM raw_image WHERE path = %s), %s, %s, %s, %s, %s, %s)
                     """,
                     (annotation.path.folder_name + "/" + annotation.path.file_name, bounding_box.x, bounding_box.y, bounding_box.width, bounding_box.height, bounding_box.rotation, bounding_box.label.value)
                 )
@@ -73,9 +72,9 @@ def query_images(label: Optional[Label], flags: List[Flag]):
 
         # Add conditions for label and flags if they are provided
         if label:
-            conditions.append("bounding_box_id IN (SELECT id FROM BoundingBox WHERE label = %s)")
+            conditions.append("bounding_box_id IN (SELECT id FROM bounding_box WHERE label = %s)")
         if flags:
-            flag_conditions = ["bounding_box_id IN (SELECT id FROM BoundingBox WHERE label = %s)" for flag in flags]
+            flag_conditions = ["bounding_box_id IN (SELECT id FROM bounding_box WHERE label = %s)" for flag in flags]
             conditions.append(" OR ".join(flag_conditions))
 
         if conditions:
@@ -98,9 +97,7 @@ def query_images(label: Optional[Label], flags: List[Flag]):
     finally:
         connection.close()
 
-
-# to be added
-
-raw_annotations = load_raw_annotations()
-annotations = parse_raw_annotations(raw_annotations)
-insert_annotations_to_db(annotations)
+if __name__ == 'main':
+    raw_annotations = load_raw_annotations()
+    annotations = parse_raw_annotations(raw_annotations)
+    insert_annotations_to_db(annotations)
