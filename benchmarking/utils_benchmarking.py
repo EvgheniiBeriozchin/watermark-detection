@@ -1,26 +1,43 @@
-import pandas as pd
+import os
 import numpy as np
-import cv2
-import glob
+import psycopg2
+from data.connect_postgres import get_postgresql_connection
 
-def load_test_watermarks(folder_path):
-    """Read comparison images and transform to binarized negative of sketch"""
-    images = [cv2.imread(file) for file in glob.glob(folder_path + '/*.png')]
-    #images = [cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) for img in images]
-    return images
+def get_test_paths(rootdir):
 
-def get_accuracy(model, path_test_watermarks, path_csv, path_embeddings, n_nearest_neighbors = 10):
-    model.eval()
-    testset = pd.read_csv(path_csv)
-    embeddings = np.load(path_embeddings)
+    classlabel = []
 
-    images = load_test_watermarks(path_test_watermarks)
+    for subdir, dirs, files in os.walk(rootdir):
+        for file in files:
+            if file.lower().endswith(('.jpg', '.jpeg', '.png')):
+                fullpath = os.path.join(subdir, file)
+                classpath = os.path.dirname(fullpath)
+                folderpath = os.path.dirname(classpath)
 
-    matching_drawing = np.zeros(len(images))
+                classlabel.append([os.path.join(os.path.basename(folderpath), file), os.path.basename(classpath)])
 
-    for i, image in enumerate(images):
-        output = model(image) # Adjust to model input requirements
-        get_embeddings = embeddings_funtion(output)
+    return classlabel
+
+#rootdir = '/Users/pauli/Documents/Studium/Master/4_Semester/TUM_DI_Lab/Data_Labeling/Testset'
+#classlabels = get_test_paths(rootdir)
+#classlabels[0]
+
+
+
+
+def get_pipeline_accuracy(n, test_watermarks_paths):
+    tests = len(test_watermarks_paths)
+
+    drawing_found = np.zeros(tests)
+    # Step 1 get image and nearest neighbors
+
+    for image in test_watermarks_paths:
+
+        get_nearest_neighbors_path
+
+
+
+
         
 
 
