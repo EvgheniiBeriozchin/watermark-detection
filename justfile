@@ -43,8 +43,9 @@ transform-drawings path modelname:
   cp ../data/{{DNB_DATASET_PATH}}/{{path}}/* ../data/{{DNB_DATASET_PATH}}/tmp_src/test/
   python3 ../gan-training/datasets/combine_A_and_B.py --fold_A ../data/{{DNB_DATASET_PATH}}/tmp_src --fold_B ../data/{{DNB_DATASET_PATH}}/tmp_src  --fold_AB ../data/{{DNB_DATASET_PATH}}/tmp
   cd ../gan-training && python3 test.py --dataroot ../data/{{DNB_DATASET_PATH}}/tmp/ --name {{modelname}} --model pix2pix --direction BtoA --num_test 3000000
-  # rm -r ../data/{{DNB_DATASET_PATH}}/{{path}}/*
-  mv ../gan-training/results/{{modelname}}/test_latest/images/*_fake_B.png ../data/{{DNB_DATASET_PATH}}/tmp2/{{path}}
+  rm -r ../data/{{DNB_DATASET_PATH}}/{{path}}/*
+  mv ../gan-training/results/{{modelname}}/test_latest/images/*_fake_B.png ../data/{{DNB_DATASET_PATH}}/{{path}}
+  python3 make_drawings_grayscale.py --path ../data/{{DNB_DATASET_PATH}}/{{path}}
   rm -r ../data/{{DNB_DATASET_PATH}}/tmp/*
   rm ../data/{{DNB_DATASET_PATH}}/tmp_src/test/*
   rm -r ../gan-training/results/{{modelname}}/test_latest
@@ -77,6 +78,12 @@ train-dnb-model modelname:
   cd ../gan-training/ && python train.py --dataroot ../data/{{DNB_DATASET_PATH}} --name {{modelname}} --model cycle_gan --batch_size=1 
   cd ../gan-training/ && cp ./checkpoints/{{modelname}}/latest_net_G_A.pth ./checkpoints/{{modelname}}/latest_net_G.pth 
 
-generate-drawings modelname sourcepath targetpath:
-  python3 test.py --dataroot {{sourcepath}} --name {{modelname}} --model cycle_gan --no_dropout
+watermarks-to-outlines modelname sourcepath targetpath:
+  cd ../gan-training && python3 test.py --dataroot {{sourcepath}} --name {{modelname}} --model cycle_gan --no_dropout
   mv ../gan-training/results/{{modelname}}/test_latest/images/*_fake_B.png targetpath
+  python3 make_drawings_grayscale.py --path targetpath
+
+drawings-to-outlines modelname sourcepath targetpath:
+  cd ../gan-training && python3 test.py --dataroot {{sourcepath}} --name {{modelname}} --model pix2pix --direction BtoA --num_test 3000000
+  mv ../gan-training/results/{{modelname}}/test_latest/images/*_fake_B.png targetpath
+  python3 make_drawings_grayscale.py --path targetpath
