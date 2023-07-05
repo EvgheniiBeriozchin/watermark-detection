@@ -46,7 +46,15 @@ def create_tables():
                 path TEXT UNIQUE,
                 model_version TEXT
                 )
-		""")
+		""",
+        """
+        CREATE TABLE TestSet (
+                id SERIAL PRIMARY KEY,
+                raw_image_id INTEGER REFERENCES RawImage (id),
+                path TEXT,
+                category TEXT
+)       """
+    )
     conn = None
     try:
         # connect to the PostgreSQL server

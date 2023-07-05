@@ -5,6 +5,8 @@ from connect_postgres import get_postgresql_connection
 from annotation import Annotation, BoundingBox, Flag, GeographicalSource, Label, Path
 from load_annotations import parse_raw_annotations, load_raw_annotations
 
+from benchmarking.utils_benchmarking import get_test_paths
+
 
 def insert_annotations_to_db(annotations):
     try:
@@ -48,9 +50,40 @@ def insert_annotations_to_db(annotations):
                     (annotation.path.folder_name + "/" + annotation.path.file_name, bounding_box.x, bounding_box.y, bounding_box.width, bounding_box.height, bounding_box.rotation, bounding_box.label.value)
                 )
 
+
         # close communication with the PostgreSQL database server
         cursor.close()
         # commit the changes
+        connection.commit()
+
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+
+    finally:
+        if connection is not None:
+            connection.close()
+
+
+def insert_testset_to_db(rootdir):
+    try:
+        # connect to the PostgreSQL server
+        connection = get_postgresql_connection()
+        cursor = connection.cursor()
+
+        classlabels = get_test_paths(rootdir)
+
+        for path, class_label in classlabels
+            print(path, class_label)
+
+            cursor.execute(
+                """
+                INSERT INTO TestSet (id, raw_image_id, path, category)
+                VALUES (DEFAULT, (SELECT id FROM RawImage WHERE path = %s), %s, %s)                
+                """,
+                (path, path, class_label)
+            )
+
+        cursor.close()
         connection.commit()
 
     except (Exception, psycopg2.DatabaseError) as error:
