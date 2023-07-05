@@ -1,8 +1,8 @@
 import psycopg2
-from connect_postgres import get_postgresql_connection
+from data.connect_postgres import get_postgresql_connection
 
 
-def create_tables():
+def create_tables(cursor):
     """ create tables in the PostgreSQL database"""
     commands = (
         """
@@ -40,6 +40,13 @@ def create_tables():
                 )  
 		""",
         """
+		CREATE TABLE preprocessed_image (
+                id SERIAL PRIMARY KEY,
+                image_id INTEGER UNIQUE REFERENCES image (id),
+                path TEXT UNIQUE
+                )  
+		""",
+        """
 		CREATE TABLE encoding (
                 id SERIAL PRIMARY KEY,
                 image_id INTEGER REFERENCES image (id),
@@ -47,16 +54,20 @@ def create_tables():
                 model_version TEXT
                 )
 		""")
+    
+    for command in commands:
+            cursor.execute(command)
+
+if __name__ == '__main__':
     conn = None
     try:
         # connect to the PostgreSQL server
         conn = get_postgresql_connection()
-        cur = conn.cursor()
+        cursor = conn.cursor()
         # create table one by one
-        for command in commands:
-            cur.execute(command)
+        create_tables(cursor)
         # close communication with the PostgreSQL database server
-        cur.close()
+        cursor.close()
         # commit the changes
         conn.commit()
     except (Exception, psycopg2.DatabaseError) as error:
@@ -64,7 +75,3 @@ def create_tables():
     finally:
         if conn is not None:
             conn.close()
-
-
-if __name__ == '__main__':
-    create_tables()

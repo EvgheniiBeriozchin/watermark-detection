@@ -10,5 +10,9 @@ PROCESSED_IMAGE_VAL_PATH = {
     Label.Drawing: "../data/dnb/processed/testB",
     Label.Watermark: "../data/dnb/processed/testA",
 }
+CUT_IMAGE_PATH = {
+    Label.Drawing: "../data/dnb/cut/drawings/",
+    Label.Watermark: "../data/dnb/cut/watermarks/"
+}
 
 TRAIN_PERCENTAGE = 0.95

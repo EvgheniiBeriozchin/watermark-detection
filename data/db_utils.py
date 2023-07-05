@@ -1,6 +1,6 @@
 import psycopg2
 from typing import Optional, List
-from connect_postgres import get_postgresql_connection
+from data.connect_postgres import get_postgresql_connection
 from annotation import Flag, Label
 
 def query_images(label: Optional[Label], flags: List[Flag]):
@@ -39,3 +39,10 @@ def query_images(label: Optional[Label], flags: List[Flag]):
 
     finally:
         connection.close()
+
+def clean_db(cursor):
+    cursor.execute("DROP TABLE raw_image;")
+    cursor.execute("DROP TABLE bounding_box;")
+    cursor.execute("DROP TABLE image;")
+    cursor.execute("DROP TABLE preprocessed_image;")
+    cursor.execute("DROP TABLE encoding;")
