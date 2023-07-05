@@ -39,3 +39,10 @@ def query_images(label: Optional[Label], flags: List[Flag]):
 
     finally:
         connection.close()
+
+def clean_db(cursor):
+    cursor.execute("DROP TABLE raw_image;")
+    cursor.execute("DROP TABLE bounding_box;")
+    cursor.execute("DROP TABLE image;")
+    cursor.execute("DROP TABLE preprocessed_image;")
+    cursor.execute("DROP TABLE encoding;")

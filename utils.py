@@ -1,8 +1,9 @@
 import os
+import shutil
 
 from typing import List
-from annotation import Annotation
-from constants import RAW_IMAGE_PATH
+from annotation import Annotation, Label
+from constants import RAW_IMAGE_PATH, PROCESSED_IMAGE_TRAIN_PATH, PROCESSED_IMAGE_VAL_PATH
 
 def check_folders_exist(annotations: List[Annotation]):
     folders = list(set([annotation.path.folder_name for annotation in annotations]))
@@ -22,3 +23,8 @@ def check_folders_exist(annotations: List[Annotation]):
 
 def check_images_exist(annotations):
     pass
+
+def remove_processed_data():
+    for label in Label:
+        for data_path in [PROCESSED_IMAGE_TRAIN_PATH, PROCESSED_IMAGE_VAL_PATH]:
+            shutil.rmtree(data_path[label])
