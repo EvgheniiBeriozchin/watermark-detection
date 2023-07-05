@@ -7,7 +7,7 @@ from annoy import AnnoyIndex
 from PIL import Image, ImageDraw
 
 
-def Get_nns_spotify_annoy(image_path,annoy_index, images):
+def get_nns_spotify_annoy(image_path,annoy_index, images):
 
     transform = transforms.Compose([
         transforms.Resize((224, 224)),
