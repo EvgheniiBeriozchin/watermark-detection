@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
     raw_annotations = load_raw_annotations()
     annotations = parse_raw_annotations(raw_annotations)
-    insert_annotations_to_db(annotations)
+    insert_annotations_to_db(cursor, annotations)
     
     check_folders_exist(annotations)
     
