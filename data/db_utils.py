@@ -1,6 +1,6 @@
 import psycopg2
 from typing import Optional, List
-from connect_postgres import get_postgresql_connection
+from data.connect_postgres import get_postgresql_connection
 from annotation import Flag, Label
 
 def query_images(label: Optional[Label], flags: List[Flag]):

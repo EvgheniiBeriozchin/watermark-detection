@@ -1,7 +1,7 @@
 import psycopg2
 import os
 from typing import List
-from connect_postgres import get_postgresql_connection
+from data.connect_postgres import get_postgresql_connection
 from annotation import Flag
 from load_annotations import parse_raw_annotations, load_raw_annotations
 

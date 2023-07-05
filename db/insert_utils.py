@@ -1,7 +1,7 @@
 import psycopg2
-from connect_postgres import get_postgresql_connection
-from ..constants import PROCESSED_IMAGE_TRAIN_PATH, PROCESSED_IMAGE_VAL_PATH
-from ..annotation import Label
+from data.connect_postgres import get_postgresql_connection
+from constants import PROCESSED_IMAGE_TRAIN_PATH, PROCESSED_IMAGE_VAL_PATH
+from annotation import Label
 
 def insert_bounding_box_to_db(cursor, annotation, bounding_box):
     cursor.execute(
