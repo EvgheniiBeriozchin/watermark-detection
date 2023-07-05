@@ -1,11 +1,16 @@
 import cv2
 from preprocess_watermarks import preprocess_watermark
+import argparse
 
-IMAGE_PATH = "../data/dnb/processed/trainA/0027722_1-0.jpg"
+
 OUTPUT_PATH = "outputs/"
 
 if __name__=='__main__':
-    image = cv2.imread(IMAGE_PATH)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input_path", type=str)
+    args = parser.parse_args()
+    
+    image = cv2.imread(args.input_path)
     image = preprocess_watermark(image)
 
     cv2.imwrite(OUTPUT_PATH/tmp.jpg)
