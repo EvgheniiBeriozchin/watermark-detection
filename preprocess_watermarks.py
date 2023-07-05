@@ -103,9 +103,6 @@ def im_show(image, name=None):
     plt.title(name)
     plt.show()
 
-path_imwrite = "/Users/pauli/Documents/Studium/Master/4_Semester/TUM_DI_Lab/Final Report/Images/"
-
-
 def preprocess_watermark(image: ndarray):
     image = strech_contrast(image)
     image = remove_ink(image)
@@ -121,8 +118,3 @@ def preprocess_watermark(image: ndarray):
     image = cv2.GaussianBlur(image, (5, 5), 0)
 
     return image
-
-
-
-
-
