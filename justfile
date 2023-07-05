@@ -1,6 +1,17 @@
 SKETCH_DATASET_PATH:="sketch_dataset"
 DNB_DATASET_PATH:="dnb/processed"
 
+run imagepath modelname:
+rm -r outputs && mkdir outputs
+python3 -m pipeline.prepare_watermark --input_path {{imagepath}}
+cd ../gan-training && mkdir testA && mkdir testB && cp ../watermark-detection/outputs/tmp.jpg testA/ && cp ../watermark-detection/outputs/tmp.jpg testB/
+cd ../gan-training && python3 test.py --dataroot ./ --name {{modelname}} --model cycle_gan --no_dropout --results_dir ../watermark-detection/outputs/ && rm -r testA && rm -r testB
+rm outputs/tmp.jpg
+mv outputs/{{modelname}}/test_latest/images/tmp_fake_B.png outputs/tmp.jpg
+rm -r outputs/{{modelname}}
+python3 -m pipeline.get_nearest_neighbors                                                               
+rm outputs/tmp.jpg    
+
 setup-model-training:
   cd .. && mkdir data                            
   cd .. && git clone https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix.git gan-training                             
