@@ -9,8 +9,8 @@ def remove_test_images(annotations: List[Annotation]):
     with open(TEST_IMAGE_LIST_PATH, "r") as f:
         ignored_image_lines = f.readlines()[1:]
         ignored_image_paths = [ignored_image_line.split(",")[0].split("/") for ignored_image_line in ignored_image_lines]
-        annotations = filter(lambda annotation: (annotation.path.folder_name, annotation.path.file_name) 
-                                                not in ignored_image_paths, annotations)
+        annotations = list(filter(lambda annotation: (annotation.path.folder_name, annotation.path.file_name) 
+                                                not in ignored_image_paths, annotations))
         
         return annotations
 
