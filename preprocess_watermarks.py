@@ -10,6 +10,8 @@ def strech_contrast(image):
     min_val = np.min(image)
     max_val = np.max(image)
     stretched_image = 255 * ((image - min_val) / (max_val - min_val))
+    #stretched_image = image * (255 / (max_val - min_val))
+
     stretched_image = stretched_image.astype(np.uint8)
     image = stretched_image
     return image
@@ -19,7 +21,7 @@ def remove_ink(image):
     """Remove ink and dark colors on images"""
     if len(image.shape) < 3:
         image = cv2.cvtColor(image, cv2.COLOR_GRAY2RGB)
-    s = 100
+    s = 70
     mask = cv2.threshold(image, s, 255, cv2.THRESH_BINARY_INV)[1][:, :, 0]
     (thresh, target_gray) = cv2.threshold(image, s, 255, cv2.THRESH_BINARY)
     invert = cv2.bitwise_not(target_gray)  # [1]#[:,:,0]
@@ -111,7 +113,6 @@ def preprocess_watermark(image: ndarray):
     image_store = image
     image, eroded, dilated = remove_darker_foreground(adjusted)
     image = remove_nonuniform_background(image)
-    im_show(image, name="Remove_background")
     image = wrap_image(image, n=0)
     alpha = 0.7
     image = cv2.addWeighted(image, alpha, image_store, 1-alpha, 0.0)
