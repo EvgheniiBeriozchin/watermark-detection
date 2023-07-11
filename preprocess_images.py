@@ -1,6 +1,6 @@
 import os
 from typing import List
-from constants import PROCESSED_IMAGE_TRAIN_PATH, PROCESSED_IMAGE_VAL_PATH, RAW_IMAGE_PATH, TRAIN_PERCENTAGE
+from constants import PROCESSED_IMAGE_TRAIN_PATH, PROCESSED_IMAGE_VAL_PATH, GEOGRAPHICAL_SOURCES_PATH, RAW_IMAGE_PATH, TRAIN_PERCENTAGE
 import cv2
 from math import floor, ceil
 from random import choices
@@ -11,7 +11,8 @@ from preprocess_watermarks import preprocess_watermark
 
 
 def load_and_preprocess_raw_image(annotation: Annotation):
-    image = cv2.imread(os.path.join(RAW_IMAGE_PATH, annotation.path.folder_name, annotation.path.file_name), 
+    image = cv2.imread(os.path.join(RAW_IMAGE_PATH, GEOGRAPHICAL_SOURCES_PATH[annotation.path.geographical_source], 
+                                    annotation.path.folder_name, annotation.path.file_name), 
                        cv2.IMREAD_GRAYSCALE)
 
     processed_images = {}
