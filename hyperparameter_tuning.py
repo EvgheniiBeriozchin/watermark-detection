@@ -78,6 +78,7 @@ if __name__ == '__main__':
     )
 
     opt = TrainOptions().parse()
+    print("Options: {}".format(opt))
     dataset = create_dataset(opt)
     dataset_size = len(dataset)
     print('The number of training images = %d' % dataset_size)
