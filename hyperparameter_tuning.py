@@ -16,7 +16,9 @@ from util.visualizer import Visualizer
 def train(config, *, dataset, opt):
     opt.batch_size = config["batch_size"]
     opt.lr = config["lr"]
-    opt.n_epochs = 1
+    print("Config: {}".format(config))
+    opt.n_epochs = 10
+    opt.n_epochs_decay = 0
     print("Options in train: {}".format(opt))
     model = create_model(opt)      # create a model given opt.model and other options
     model.setup(opt)               # regular setup: load and print networks; create schedulers
@@ -62,7 +64,7 @@ def train(config, *, dataset, opt):
 
 if __name__ == '__main__':
     num_samples = 20
-    max_num_epochs = 1
+    max_num_epochs = 10
 
     config = {
         "lr": tune.loguniform(2e-8, 1e-4),
