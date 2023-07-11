@@ -28,6 +28,7 @@ def remove_ink(image):
     dst = cv2.inpaint(image, mask, 7, cv2.INPAINT_NS)
     return dst
 
+
 def adaptive_thresh(image):
     """Remove ink and dark colors on images"""
     if len(image.shape) > 2:
