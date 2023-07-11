@@ -54,7 +54,9 @@ def train(config, *, dataset, opt):
 
     losses = model.get_current_losses()
     session.report(
-        {"loss": losses["G_GAN"] + losses["G_L1"], "accuracy": -(losses["D_real"] + losses["D_fake"])},
+        {"loss": losses["G_GAN"] + losses["G_L1"], "accuracy": -(losses["D_real"] + losses["D_fake"])}
+        if opt.model == "pix2pix"  else 
+        {"loss": losses["G_A"] + losses["cycle_A"] + losses['D_B'], "accuracy": -(losses["G_B"] + losses["cycle_B"] + losses['D_A'])},
         checkpoint=None,
     )
 
