@@ -1,4 +1,5 @@
 import cv2
+import os
 from preprocess_watermarks import preprocess_watermark
 import argparse
 
@@ -13,4 +14,4 @@ if __name__=='__main__':
     image = cv2.imread(args.input_path)
     image = preprocess_watermark(image)
 
-    cv2.imwrite(OUTPUT_PATH/tmp.jpg)
+    cv2.imwrite(os.path.join(OUTPUT_PATH, "tmp.jpg"), image)
