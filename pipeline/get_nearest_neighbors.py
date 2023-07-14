@@ -1,5 +1,5 @@
 GENERATED_DRAWING_PATH = "outputs/tmp.jpg"
-ALL_DRAWINGS_PATH = "../gan-training/results/dnb-model-v1.1/test_latest/images"
+ALL_DRAWINGS_PATH = "../data/dnb/db/"
 OUTPUT_PATH = "outputs/"
 
 import cv2
@@ -12,4 +12,4 @@ if __name__=="__main__":
     annoy_index, image_names = build_annoy_index(ALL_DRAWINGS_PATH)
     _, nearest_neighbors = get_nns_spotify_annoy(GENERATED_DRAWING_PATH, annoy_index, image_names)
     for i, neighbor in enumerate(nearest_neighbors[:10]):
-        shutil.copy(os.path.join(ALL_DRAWINGS_PATH, neighbor), os.path.join(OUTPUT_PATH, "output{}.jpg".format(i)))
+        shutil.copy(os.path.join(ALL_DRAWINGS_PATH, neighbor), os.path.join(OUTPUT_PATH, "{}.jpg".format(neighbor)))

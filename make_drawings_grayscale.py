@@ -10,7 +10,7 @@ if __name__=='__main__':
     parser.add_argument("--path", type=str)
     args = parser.parse_args()
 
-    processed_paths = args.path if args.path is not None else [PROCESSED_IMAGE_TRAIN_PATH[Label.Drawing], PROCESSED_IMAGE_VAL_PATH[Label.Drawing]] 
+    processed_paths = [args.path] if args.path is not None else [PROCESSED_IMAGE_TRAIN_PATH[Label.Drawing], PROCESSED_IMAGE_VAL_PATH[Label.Drawing]] 
     for path in processed_paths:
         for imagepath in os.listdir(path):
             image = cv2.imread(os.path.join(path, imagepath))

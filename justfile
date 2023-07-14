@@ -9,8 +9,7 @@ run imagepath modelname:
   rm outputs/tmp.jpg
   mv outputs/{{modelname}}/test_latest/images/tmp_fake_B.png outputs/tmp.jpg
   rm -r outputs/{{modelname}}
-  python3 -m pipeline.get_nearest_neighbors                                                               
-  rm outputs/tmp.jpg    
+  python3 -m pipeline.get_nearest_neighbors                                                                  
 
 setup-model-training:
   cd .. && mkdir data                            
@@ -79,9 +78,11 @@ train-dnb-model modelname:
   cd ../gan-training/ && cp ./checkpoints/{{modelname}}/latest_net_G_A.pth ./checkpoints/{{modelname}}/latest_net_G.pth 
 
 watermarks-to-outlines modelname sourcepath targetpath:
-  cd ../gan-training && python3 test.py --dataroot {{sourcepath}} --name {{modelname}} --model cycle_gan --no_dropout
-  mv ../gan-training/results/{{modelname}}/test_latest/images/*_fake_B.png targetpath
-  python3 make_drawings_grayscale.py --path targetpath
+  mkdir {{targetpath}}/testA && mkdir {{targetpath}}/testB && cp {{sourcepath}}/* {{targetpath}}/testA && cp {{sourcepath}}/* {{targetpath}}/testB
+  cd ../gan-training && python3 test.py --dataroot {{targetpath}} --name {{modelname}} --model cycle_gan --no_dropout --num_test 3000000
+  rm -r {{targetpath}}/testA && rm -r {{targetpath}}/testB
+  mv ../gan-training/results/{{modelname}}/test_latest/images/*_fake_B.png {{targetpath}}
+  python3 make_drawings_grayscale.py --path {{targetpath}}
 
 drawings-to-outlines modelname sourcepath targetpath:
   cd ../gan-training && python3 test.py --dataroot {{sourcepath}} --name {{modelname}} --model pix2pix --direction BtoA --num_test 3000000
