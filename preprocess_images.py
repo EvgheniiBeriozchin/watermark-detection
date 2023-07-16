@@ -1,6 +1,6 @@
 import os
 from typing import List
-from constants import PROCESSED_IMAGE_TRAIN_PATH, PROCESSED_IMAGE_VAL_PATH, RAW_IMAGE_PATH, TRAIN_PERCENTAGE, IMAGE_SIZE, NOISE_WINDOW, MEDIAN_FILTER_SIZE
+from constants import PROCESSED_IMAGE_TRAIN_PATH, PROCESSED_IMAGE_VAL_PATH, GEOGRAPHICAL_SOURCES_PATH, RAW_IMAGE_PATH, TRAIN_PERCENTAGE, IMAGE_SIZE, NOISE_WINDOW, MEDIAN_FILTER_SIZE
 import cv2
 import numpy as np
 from math import floor, ceil
@@ -34,7 +34,8 @@ def resize_image(image: np.ndarray):
 
 
 def load_and_preprocess_raw_image(annotation: Annotation):
-    image = cv2.imread(os.path.join(RAW_IMAGE_PATH, annotation.path.folder_name, annotation.path.file_name), 
+    image = cv2.imread(os.path.join(RAW_IMAGE_PATH, GEOGRAPHICAL_SOURCES_PATH[annotation.path.geographical_source], 
+                                    annotation.path.folder_name, annotation.path.file_name), 
                        cv2.IMREAD_GRAYSCALE)
 
     processed_images = {}
