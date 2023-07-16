@@ -8,8 +8,8 @@ import glob
 
 def build_annoy_index(images_path):
 
-  images = [image_name for image_name in os.listdir(images_path) if image_name.endswith("_real_B.png")]
-
+  images = list(os.listdir(images_path))
+  
   weights = models.ResNet18_Weights.IMAGENET1K_V1
   model = models.resnet18(weights=weights)
   model.fc = nn.Identity()
