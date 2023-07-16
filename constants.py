@@ -1,12 +1,7 @@
-from annotation import Label, GeographicalSource
+from annotation import Label
 
 
 RAW_IMAGE_PATH = "../data/dnb/raw/"
-
-GEOGRAPHICAL_SOURCES_PATH = {
-    GeographicalSource.Thuringen: "WZ_II_Thueringen",
-    GeographicalSource.Sachsen: "WZ_II_Sachsen",
-}
 PROCESSED_IMAGE_TRAIN_PATH = {
     Label.Drawing: "../data/dnb/processed/trainB",
     Label.Watermark: "../data/dnb/processed/trainA",
@@ -17,3 +12,6 @@ PROCESSED_IMAGE_VAL_PATH = {
 }
 
 TRAIN_PERCENTAGE = 0.95
+IMAGE_SIZE = (256, 256)
+NOISE_WINDOW = 12
+MEDIAN_FILTER_SIZE = 7
