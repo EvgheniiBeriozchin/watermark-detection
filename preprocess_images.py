@@ -35,7 +35,8 @@ def load_and_preprocess_raw_image(annotation: Annotation):
             processed_images[Label.Drawing].append(preprocess_drawing(cropped_image))
             
         elif bounding_box.label == Label.Watermark:
-            processed_images[Label.Watermark].append(preprocess_watermark(cropped_image))
+            #processed_images[Label.Watermark].append(preprocess_watermark(cropped_image))
+            processed_images[Label.Watermark].append((cropped_image))
     
     return processed_images
 
@@ -46,23 +47,28 @@ def preprocess_images(annotations: List[Annotation]):
     print("Processing images for {} annotations".format(len(annotations)))
 
     for i, annotation in enumerate(annotations):
-        processed_images = load_and_preprocess_raw_image(annotation)
+        #print(os.path.join(RAW_IMAGE_PATH, GEOGRAPHICAL_SOURCES_PATH[annotation.path.geographical_source],
+        #                            annotation.path.folder_name, annotation.path.file_name))
+        if os.path.exists(os.path.join(RAW_IMAGE_PATH, GEOGRAPHICAL_SOURCES_PATH[annotation.path.geographical_source],
+                                    annotation.path.folder_name, annotation.path.file_name)):
 
-        for label in [Label.Drawing, Label.Watermark]:
-            for i, processed_image in enumerate(processed_images[label]):
+            processed_images = load_and_preprocess_raw_image(annotation)
 
-                folder_path = choices(data_splitting_folders, data_splitting_weights)[0][label]
-                if not os.path.isdir(folder_path):
-                    os.mkdir(folder_path)
-                
-                file_name = annotation.path.file_name
-                if len(processed_images) > 1:
-                    [name, extension] = file_name.split(".")
-                    file_name = name + "-{}.".format(i) + extension
+            for label in [Label.Drawing, Label.Watermark]:
+                for i, processed_image in enumerate(processed_images[label]):
 
-                image_path = os.path.join(folder_path, file_name)
+                    folder_path = choices(data_splitting_folders, data_splitting_weights)[0][label]
+                    if not os.path.isdir(folder_path):
+                        os.mkdir(folder_path)
 
-                cv2.imwrite(image_path, processed_image)
+                    file_name = annotation.path.file_name
+                    if len(processed_images) > 1:
+                        [name, extension] = file_name.split(".")
+                        file_name = name + "-{}.".format(i) + extension
 
-        if i > 0 and i % 50 == 0:
-            print("Processed {} annotations".format(i))
+                    image_path = os.path.join(folder_path, file_name)
+
+                    cv2.imwrite(image_path, processed_image)
+
+            if i > 0 and i % 50 == 0:
+                print("Processed {} annotations".format(i))

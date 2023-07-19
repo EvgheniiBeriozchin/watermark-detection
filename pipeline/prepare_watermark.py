@@ -12,6 +12,7 @@ if __name__=='__main__':
     args = parser.parse_args()
     
     image = cv2.imread(args.input_path)
+    print(args.input_path)
     image = preprocess_watermark(image)
 
     cv2.imwrite(os.path.join(OUTPUT_PATH, "tmp.jpg"), image)

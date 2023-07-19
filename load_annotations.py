@@ -5,7 +5,7 @@ from typing import List
 from annotation import Annotation, BoundingBox, Flag, GeographicalSource, Label, Path
 
 BATCHES_PATH = "./data-annotation/"
-BATCHES_FOLDERS_START = "batch-"
+BATCHES_FOLDERS_START = "batch-s"
 SACHSEN_FOLDER_NAME = "WZ_II_Sachsen"
 
 
