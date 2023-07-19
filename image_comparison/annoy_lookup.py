@@ -23,7 +23,7 @@ def get_nns_spotify_annoy(image_path,annoy_index, images):
 
     input_tensor = transform(image).unsqueeze(0)
     output_tensor = model(input_tensor)
-    nns = annoy_index.get_nns_by_vector(output_tensor[0],1000)
+    nns = annoy_index.get_nns_by_vector(output_tensor[0],100000)
     nns_names = sorted(images, key=lambda i: nns.index(images.index(i)))
 
     return nns, nns_names
