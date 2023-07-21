@@ -1,9 +1,11 @@
 import os
 import numpy as np
 import pandas as pd
-i
-def get_test_paths(rootdir):
 
+i
+
+
+def get_test_paths(rootdir):
     classlabel = []
 
     for subdir, dirs, files in os.walk(rootdir):
@@ -16,6 +18,7 @@ def get_test_paths(rootdir):
                 classlabel.append([os.path.join(os.path.basename(folderpath), file), os.path.basename(classpath)])
 
     return classlabel
+
 
 def get_images_in_df(path):
     files = os.listdir(path)
@@ -54,3 +57,17 @@ def process_result(path_results):
     return full_db
 
 
+def get_accuracy(excel_path, sheetname, write_csv=False):
+    table = pd.read_excel(
+        excel_path, sheet_name=sheetname)
+    list_bm = []
+    for i in range(1, 51):
+        list_bm.append([i, (len(table[table.Position <= i].index)) / 22])
+        # print(len(bm_v1_4_full[bm_v1_4_full.Position <= i].index))
+
+    list_bm
+    accuracy = pd.DataFrame(list_bm, columns=['Neighbors', 'Accuracy'])
+    if write_csv:
+        accuracy.to_csv('../accuracy.csv')
+
+    return accuracy
