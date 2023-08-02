@@ -1,5 +1,5 @@
 import cv2
-from PreProcessingDrawingsFunctions import make_black_and_white, remove_short_lines, remove_blobs, \
+from preprocessing_drawings.PreProcessingDrawingsFunctions import make_black_and_white, remove_short_lines, remove_blobs, \
   convert_and_thresholding, is_grayscale
 import numpy as np
 

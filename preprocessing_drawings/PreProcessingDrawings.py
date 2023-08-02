@@ -1,7 +1,7 @@
-from PreProcessingDrawingsFunctions import make_black_and_white, calculate_black_percentage, is_grayscale
-from PreProcessingDrawingsNoRemoval import preprocess_drawing_noremoval
-from PreProcessingDrawingsPixel import preprocess_drawing_pixel
-from PreProcessingDrawingsWavelets import preprocess_drawing_wavelets
+from preprocessing_drawings.PreProcessingDrawingsFunctions import make_black_and_white, calculate_black_percentage, is_grayscale
+from preprocessing_drawings.PreProcessingDrawingsNoRemoval import preprocess_drawing_noremoval
+from preprocessing_drawings.PreProcessingDrawingsPixel import preprocess_drawing_pixel
+from preprocessing_drawings.PreProcessingDrawingsWavelets import preprocess_drawing_wavelets
 import cv2
 
 remove_vec = [150,400,140,100]
@@ -9,7 +9,7 @@ sigma = 10
 wname = 'db1'
 decNum = 5
 
-def pre_processing_drawing(image,remove_vec,wname,decNum,sigma):
+def pre_processing_drawing(image, remove_vec=[150,400,140,100], wname='db1', decNum=5, sigma=10):
 
   image_gray = is_grayscale(image)
 

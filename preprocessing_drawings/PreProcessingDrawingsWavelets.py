@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from PreProcessingDrawingsFunctions import xRemoveStripesVertical, remove_short_lines, is_grayscale
+from preprocessing_drawings.PreProcessingDrawingsFunctions import xRemoveStripesVertical, remove_short_lines, is_grayscale
 
 def preprocess_drawing_wavelets(image,wname,decNum,sigma):
 
