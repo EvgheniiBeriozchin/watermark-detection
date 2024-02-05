@@ -2,6 +2,7 @@
 This is a project which aims to improve the comparison and detection of historical paper watermarks.
 It was completed as part of the TUM Data Innovation Lab in partnership with the TU Delft and the German National Library and Museum of Books and Writing.
 
+Full Report is available here: https://www.mdsi.tum.de/fileadmin/w00cet/di-lab/pdf/TUM_Chair_for_Geometry_and_Visualization___TUM-DI-LAB_FinalReport_SS2023-1.pdf
 # Description
 The study of watermarks holds significant importance for historical humanities. Watermarks offer valuable insights into the origins and production of paper, aiding in identifying papermakers, mills, and periods when a specific piece of paper was made. This information plays a crucial role in dating and verifying historical documents. By identifying watermarks in various documents, one can establish connections between manuscripts, trace paper sources, and track trade routes and distribution networks. However, the identification of such watermarks and comparison is currently a time-consuming manual process. 
  
